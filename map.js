@@ -8,7 +8,7 @@ let osm = L.tileLayer(
     {attribution: '&copy; OpenStreetMap contributors'}
 ).addTo(map);
 
-let alt_base = L.tileLayer.provider("Esri.WorldTopoMap").addTo(map);
+let alt_base = L.tileLayer.provider("OpenTopoMap").addTo(map);
 
 // 3. Add at least one marker, line, or polygon
 let delta = L.marker([44.080924901226695, -123.10872315295353]).addTo(map);
