@@ -7,9 +7,8 @@ let osm = L.tileLayer(
     "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
     {attribution: '&copy; OpenStreetMap contributors'}
 ).addTo(map);
-let terrain = L.tileLayer.provider("Stadia.StamenTerrain").addTo(map);
 
-let alt_base = L.tileLayer.provider('Stadia.StamenWatercolor').addTo(map);
+let alt_base = L.tileLayer.provider("Esri.WorldTopoMap").addTo(map);
 
 // 3. Add at least one marker, line, or polygon
 let delta = L.marker([44.080924901226695, -123.10872315295353]).addTo(map);
@@ -25,6 +24,6 @@ let wms = L.tileLayer.wms('https://www.mrlc.gov/geoserver/mrlc_display/wms', {
     });
 
 // 4. Add Layer controls
-let baseMaps = { "Streets": osm, "Terrain": terrain, "Watercolor": alt_base };
+let baseMaps = { "Streets": osm, "Terrain": terrain, "Alt_Base": alt_base };
 let overlayMaps = { "Delta Ponds": delta, "3-Mile Dune Area": threemile, "NLCD Land Cover": wms };
 L.control.layers(baseMaps, overlayMaps).addTo(map);
