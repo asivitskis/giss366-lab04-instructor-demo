@@ -24,6 +24,6 @@ let wms = L.tileLayer.wms('https://www.mrlc.gov/geoserver/mrlc_display/wms', {
     });
 
 // 4. Add Layer controls
-let baseMaps = { "Streets": osm, "Terrain": terrain, "Alt_Base": alt_base };
+let baseMaps = { "Streets": osm, "Alt_Base": alt_base };
 let overlayMaps = { "Delta Ponds": delta, "3-Mile Dune Area": threemile, "NLCD Land Cover": wms };
 L.control.layers(baseMaps, overlayMaps).addTo(map);
