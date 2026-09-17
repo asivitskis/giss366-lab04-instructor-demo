@@ -9,6 +9,11 @@ let osm = L.tileLayer(
 ).addTo(map);
 let terrain = L.tileLayer.provider("Stadia.StamenTerrain").addTo(map);
 
+var Esri_WorldPhysical = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Physical_Map/MapServer/tile/{z}/{y}/{x}', {
+	attribution: 'Tiles &copy; Esri &mdash; Source: US National Park Service',
+	maxZoom: 8
+}).addTo(map);
+
 // 3. Add at least one marker, line, or polygon
 let delta = L.marker([44.080924901226695, -123.10872315295353]).addTo(map);
 delta.bindPopup("This is an important urban wetland.");
